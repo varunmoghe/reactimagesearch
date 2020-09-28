@@ -23,6 +23,7 @@ class App extends React.Component {
 
     changeTheme= () => {
         if(this.state.theme === "light") {
+            document.querySelector('body').style.transition = 'background-color 0.3s ease';
             document.querySelector('body').style.backgroundColor = "#242424";
             document.getElementById('theme-icon').className = "icon lightbulb";
             document.getElementById('search-input').id = "search-input-dark";

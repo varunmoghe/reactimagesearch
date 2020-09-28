@@ -9,9 +9,11 @@
 }
 
 #search-input-dark {
-    background-color: rgb(39 37 37);
+    background-color: rgb(39 39 39);
     border: 1px solid #ffffff61;
     color: white;
     border-radius: 50px;
     padding: 20px;
+    /* transition: color 0.3s ease;
+    transition: background-color 0.3s ease; */
 }
