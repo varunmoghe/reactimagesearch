@@ -22,3 +22,9 @@
     color: #fff;
     transform: translateY(-7px);
 }
+
+#github-btn {
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+}

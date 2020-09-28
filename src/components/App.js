@@ -46,6 +46,14 @@ class App extends React.Component {
                 <button className="circular ui icon button massive" id="theme-changer-btn" onClick={this.changeTheme}>
                     <i className="icon lightbulb outline" id="theme-icon" />
                 </button>
+                <a href="https://github.com/varunmoghe/reactimagesearch" target="_blank">
+                    <div className="ui labeled button" tabIndex={0} id="github-btn">
+                        <div className="ui basic blue button">
+                            <i className="fork icon" /> Github
+                        </div>
+                        <a className="ui basic right pointing blue label"></a>
+                    </div>
+                </a>
             </div>
         );
     }
