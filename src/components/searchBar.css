@@ -1,11 +1,11 @@
 .form {
     margin-top: 30px;
+    display: flex;
 }
 
 #search-input {
-    /* border: 2px solid; */
     border-radius: 50px;
-    padding: 20px;
+    height: 60px;
 }
 
 #search-input-dark {
@@ -16,4 +16,13 @@
     padding: 20px;
     /* transition: color 0.3s ease;
     transition: background-color 0.3s ease; */
+}
+
+#search-button {
+    height: 50px;
+    width: 150px;
+    align-self: center;
+    margin-left: 10px;
+    border-radius: 30px;
+    box-shadow: 0px 4px 5px rgb(58 61 60 / 40%);
 }

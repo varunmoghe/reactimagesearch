@@ -35,6 +35,8 @@ class SearhBar extends React.Component {
                         placeholder="Type an image to search"
                         onChange={e => this.setState({term: e.target.value})} 
                         />
+
+                    <button className="ui button green" id="search-button" onClick={this.onFormSubmit}>Search</button>
                 </form>
             // </div>
         );
