@@ -1,4 +1,5 @@
 import React from 'react';
+import './searchBar.css';
 
 class SearhBar extends React.Component {
 
@@ -17,25 +18,32 @@ class SearhBar extends React.Component {
 
     render() {
         return (
-            <div className="ui segment">
+            // <div className="ui segment">
                 <form className="ui form" onSubmit={this.onFormSubmit}>
-                    <div className="field">
-                        <label><b>Image Search</b></label>
+                    {/* <div className="field"> */}
+                        {/* <label><b>Image Search</b></label> */}
                         {/* <input type="text" className="field" onChange={this.onInputChange} /> */}
                         {/* using arrow function instead of creating a new function */}
                         {/* <input type="text" className="field" onChange={(event) => console.log(event.target.value)} /> */}
                         {/* Converting uncontrolled input to controlled */}
-                        <input 
+                        
+                    {/* </div> */}
+                    <input 
+                        id="search-input"
                         type="text"
                         value={this.state.term}
-                        placeholder="Type your search term"
+                        placeholder="Type an image to search"
                         onChange={e => this.setState({term: e.target.value})} 
                         />
-                    </div>
                 </form>
-            </div>
+            // </div>
         );
     }
 }
+
+// document.querySelector('body').style.backgroundColor = "#242424";
+// if(document.getElementById('#search-input')) {
+//     document.getElementById('#search-input').style.backgroundColor = "#242424";
+// }
 
 export default SearhBar;

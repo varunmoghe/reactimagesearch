@@ -1,0 +1,17 @@
+.form {
+    margin-top: 30px;
+}
+
+#search-input {
+    /* border: 2px solid; */
+    border-radius: 50px;
+    padding: 20px;
+}
+
+#search-input-dark {
+    background-color: rgb(39 37 37);
+    border: 1px solid #ffffff61;
+    color: white;
+    border-radius: 50px;
+    padding: 20px;
+}
