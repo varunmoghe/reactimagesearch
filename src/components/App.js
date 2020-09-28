@@ -51,7 +51,7 @@ class App extends React.Component {
                         <div className="ui basic blue button">
                             <i className="fork icon" /> Github
                         </div>
-                        <a className="ui basic right pointing blue label"></a>
+                        <a className="ui right pointing blue label"></a>
                     </div>
                 </a>
             </div>
