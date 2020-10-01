@@ -16,6 +16,21 @@ class App extends React.Component {
     //     // this.setTheme(document.cookie)
     // }
 
+    componentDidMount() {
+        this.getLatestPhotos();
+    }
+
+    getLatestPhotos = async () => {
+        this.setState({ loading: true });
+        const response = await unsplash.get('/photos', {
+            params: {
+                per_page: 30
+            }
+        });
+        this.setState({ images: response.data });
+        this.setState({ loading: false });
+    };
+
     onSearchSubmit = async term => {
         this.setState({ loading: true });
         const response = await unsplash.get('/search/photos', {
