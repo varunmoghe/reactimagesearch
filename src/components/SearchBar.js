@@ -1,7 +1,7 @@
 import React from 'react';
 import './searchBar.css';
 
-class SearhBar extends React.Component {
+class SearchBar extends React.Component {
 
     // can be replaced with an arrow function
     // onInputChange(event) {
@@ -48,4 +48,4 @@ class SearhBar extends React.Component {
 //     document.getElementById('#search-input').style.backgroundColor = "#242424";
 // }
 
-export default SearhBar;
+export default SearchBar;

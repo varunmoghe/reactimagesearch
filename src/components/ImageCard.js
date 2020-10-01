@@ -20,11 +20,11 @@ class ImageCard extends React.Component {
     }
 
     render() {
-        const { description, urls } = this.props.image;
+        // const { description, urls } = this.props.image;
         return(
             <a style={{ gridRowEnd: `span ${this.state.spans}` }} href={this.props.image.urls.regular} data-fancybox="images">
                 <img ref={this.imageRef} src={this.props.image.urls.thumb}
-                alt={this.props.image.urls.thumb} className="ui image rounded" />
+                alt={this.props.image.alt_description} className="ui image rounded" />
             </a>
         );
     }

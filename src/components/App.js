@@ -2,11 +2,22 @@ import React from 'react';
 import unsplash from '../api/unsplash';
 import SearchBar from './SearchBar';
 import ImageList from './ImageList';
+import Loader from './Loader';
 import './App.css'
 
 class App extends React.Component {
-    state = { images: [], theme: 'light' };
+    state = { 
+        images: [], theme: 'light',
+        loading: false
+    };
+    // const [cookies, setCookie] = useCookies(['name']);
+
+    // constructor() {
+    //     // this.setTheme(document.cookie)
+    // }
+
     onSearchSubmit = async term => {
+        this.setState({ loading: true });
         const response = await unsplash.get('/search/photos', {
             params: {
                 query: term,
@@ -18,11 +29,21 @@ class App extends React.Component {
         // });
 
         this.setState({ images: response.data.results });
-        console.log(this.state.images)
+        this.setState({ loading: false });
     }
 
     changeTheme= () => {
         if(this.state.theme === "light") {
+            document.cookie = 'theme=light';
+            this.setTheme(this.state.theme)
+        } else {
+            document.cookie = 'theme=dark';
+            this.setTheme(this.state.theme)
+        }
+    }
+
+    setTheme(theme) {
+        if (theme === "light") {
             document.querySelector('body').style.transition = 'background-color 0.3s ease';
             document.querySelector('body').style.backgroundColor = "#242424";
             document.getElementById('theme-icon').className = "icon lightbulb";
@@ -42,16 +63,17 @@ class App extends React.Component {
                 <div className="ui container">
                     <SearchBar onSubmit={this.onSearchSubmit} />
                 </div>
-                <ImageList images={this.state.images} />
+                {this.state.loading ? <Loader theme={this.state.theme}/> : <ImageList images={this.state.images} />}
+                {/* <ImageList images={this.state.images} /> */}
                 <button className="circular ui icon button massive" id="theme-changer-btn" onClick={this.changeTheme}>
                     <i className="icon lightbulb outline" id="theme-icon" />
                 </button>
-                <a href="https://github.com/varunmoghe/reactimagesearch" target="_blank">
+                <a href="https://github.com/varunmoghe/reactimagesearch" target="_blank" rel="noopener noreferrer">
                     <div className="ui labeled button" tabIndex={0} id="github-btn">
                         <div className="ui basic blue button">
                             <i className="fork icon" /> Github
                         </div>
-                        <a className="ui right pointing blue label"></a>
+                        <i className="ui right pointing blue label"></i>
                     </div>
                 </a>
             </div>
