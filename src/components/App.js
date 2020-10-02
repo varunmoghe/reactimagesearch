@@ -10,39 +10,19 @@ class App extends React.Component {
         images: [], theme: 'light',
         loading: false
     };
-    // const [cookies, setCookie] = useCookies(['name']);
 
-    // constructor() {
-    //     // this.setTheme(document.cookie)
-    // }
-
-    componentDidMount() {
-        this.getLatestPhotos();
-    }
-
-    getLatestPhotos = async () => {
+    async componentDidMount() {
         this.setState({ loading: true });
-        const response = await unsplash.get('/photos', {
-            params: {
-                per_page: 30
-            }
-        });
+        const unsplashInstance = new unsplash();
+        const response = await unsplashInstance.getLatestPhotos();
         this.setState({ images: response.data });
         this.setState({ loading: false });
-    };
+    }
 
     onSearchSubmit = async term => {
         this.setState({ loading: true });
-        const response = await unsplash.get('/search/photos', {
-            params: {
-                query: term,
-                per_page: 30
-            }            
-        });
-        // .then(response => {
-        //     console.log(response.data.results);
-        // });
-
+        const unsplashInstance = new unsplash();
+        const response = await unsplashInstance.getSearchPhotos(term);
         this.setState({ images: response.data.results });
         this.setState({ loading: false });
     }

@@ -8,11 +8,9 @@ const Loader = theme => {
         loaderClass = "ui active inverted loader";
     }
     return (
-        // <div className="ui segment">
             <div className={loaderClass}>
                 <div className="ui text loader">Loading</div>
             </div>
-        // </div>
     );
 }
 
