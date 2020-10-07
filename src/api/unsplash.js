@@ -17,20 +17,22 @@ class Unsplash {
         });
     }
 
-    getLatestPhotos () {
+    getLatestPhotos (pageNo) {
         const response = this.create().get('/photos', {
             params: {
-                per_page: 30
+                per_page: 30,
+                page: pageNo
             }
         });
         return response;
     }
 
-    getSearchPhotos(term) {
+    getSearchPhotos(term, pageNo) {
         const response = this.create().get('/search/photos', {
             params: {
                 query: term,
-                per_page: 30
+                per_page: 30,
+                page: pageNo
             }            
         });
         return response;

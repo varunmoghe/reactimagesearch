@@ -9,7 +9,8 @@
     "axios": "^0.20.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "react-waypoint": "^9.0.3"
   },
   "scripts": {
     "start": "react-scripts start",
